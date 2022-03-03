@@ -4,12 +4,19 @@
 #include <iostream>
 #include <time.h>
 #include <iomanip>
+#include <string>
+#define PRECISION 5                     //How many decimals
 
 using namespace std;
 
 void constantFunction(int input)        //Decide Odd-Even
 {
+    string parity;
     int total = input%2;
+    if(total == 0)
+        parity = "even";
+        else
+            parity = "odd";
 }
 
 void linearFunction(int input)          //Going through a loop
@@ -40,8 +47,8 @@ void constant_time(int input)           //Check for Constant time
     end_time = clock();
 
     double time_taken = double(end_time - start_time) / double(CLOCKS_PER_SEC);
-    cout << "Time taken by constant function for input (" << fixed << setfill(' ') << setw(10) << input << ") is : " << setprecision(5)
-    << time_taken << " sec." << endl;
+    cout << "Time taken by constant function for input (" << fixed << setfill(' ') << setw(10) << input << ") is : "
+    << setprecision(PRECISION) << time_taken << " sec." << endl;
 }
 
 void linear_time(int input)             //Check for Linear time
@@ -53,8 +60,8 @@ void linear_time(int input)             //Check for Linear time
     end_time = clock();
 
     double time_taken = double(end_time - start_time) / double(CLOCKS_PER_SEC);
-    cout << "Time taken by linear function for input (" << fixed << setfill(' ') << setw(10) << input << ") is : " << setprecision(5)
-    << time_taken << " sec." << endl;
+    cout << "Time taken by linear function for input (" << fixed << setfill(' ') << setw(10) << input << ") is : "
+    << setprecision(PRECISION) << time_taken << " sec." << endl;
 }
 
 void quadratic_time(int input)          //Check for Quadratic time
@@ -66,8 +73,8 @@ void quadratic_time(int input)          //Check for Quadratic time
     end_time = clock();
 
     double time_taken = double(end_time - start_time) / double(CLOCKS_PER_SEC);
-    cout << "Time taken by quadratic function for input (" << fixed << setfill(' ') << setw(10) << input << ") is : " << setprecision(5)
-    << time_taken << " sec." << endl;
+    cout << "Time taken by quadratic function for input (" << fixed << setfill(' ') << setw(10) << input << ") is : "
+    << setprecision(PRECISION) << time_taken << " sec." << endl;
 }
 
 int main()
