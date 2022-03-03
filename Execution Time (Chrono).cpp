@@ -11,12 +11,15 @@ using namespace std;
 
 void constantFunction(int input)        //Decide Odd-Even
 {
+    for(int i = 0; i < 10000000; i++)   //Looped 10 million times to get observable results
+    {
     string parity;
     int total = input%2;
     if(total == 0)
         parity = "even";
         else
             parity = "odd";
+    }
 }
 
 void linearFunction(int input)          //Going through a loop
