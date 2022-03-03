@@ -11,7 +11,7 @@ using namespace std;
 
 void constantFunction(int input)        //Decide Odd-Even
 {
-    for(int i = 0; i < 10000000; i++)
+    for(int i = 0; i < 10000000; i++)   //Looped 10 million times to get observable results
     {
     string parity;
     int total = input%2;
@@ -23,7 +23,7 @@ void constantFunction(int input)        //Decide Odd-Even
 
 }
 
-void linearFunction(int input)          //Going through a loop
+void linearFunction(int input)          //Going through a loop with input as its limit
 {
     for(int i = 0; i < input; i++)
     {
@@ -31,7 +31,7 @@ void linearFunction(int input)          //Going through a loop
     }
 }
 
-void quadraticFunction(int input)       //Going through a nested loop
+void quadraticFunction(int input)       //Going through a nested loop with input as the limit of both loops
 {
     for(int i = 0; i < input; i++)
     {
