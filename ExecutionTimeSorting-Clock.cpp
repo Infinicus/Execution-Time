@@ -1,4 +1,4 @@
-//Code to check execution time using clock
+//Code to check execution time of sorting algorithms using clock
 //May not show values more than 3 decimals after zero, for higher precision, use chrono
 
 #include <iostream>
@@ -12,26 +12,28 @@
 
 using namespace std;
 
-int is_sorted(int *arr, int n) {
-   while ( --n >= 1 ) {
-      if ( arr[n] < arr[n-1] ) {
+int is_sorted(int input[], int size) {
+   while ( --size >= 1 ) {
+      if ( input[size] < input[size-1] ) {
          return 0;
       }
    }
    return 1;
 }
-void shuffle(int *arr, int n) {
+
+void shuffle(int input[], int size) {
    int temp, r;
-   for(int i=0; i < n; i++) {
-      temp = arr[i];
-      r = rand() % n;
-      arr[i] = arr[r];
-      arr[r] = temp;
+   for(int i = 0; i < size; i++) {
+      temp = input[i];
+      r = rand() % size;
+      input[i] = input[r];
+      input[r] = temp;
    }
 }
-void bogosort(int *arr, int n) {
-   while ( !is_sorted(arr, n) ) {
-      shuffle(arr, n);
+
+void bogosort(int input[], int size) {
+   while (!is_sorted(input, size)) {
+      shuffle(input, size);
    }
 }
 
@@ -173,10 +175,6 @@ int main()
 {
     int numbers[SIZE];
 
-    // generateRandomArray(numbers, SIZE);
-    // bogoSortExecutionTime(numbers, SIZE);
-
-    //prints size
     cout << "Size: " << SIZE << endl;
 
     cout << "\nBest Case: " << endl;
@@ -209,6 +207,9 @@ int main()
     generateReverseSortedArray(numbers, SIZE);
     bubbleSortExecutionTime(numbers, SIZE);
 
+    // generateRandomArray(numbers, SIZE);
+    // bogoSortExecutionTime(numbers, SIZE);
+    
     return 0;
 }
 
